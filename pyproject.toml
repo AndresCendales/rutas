@@ -1,0 +1,17 @@
+[project]
+name = "alpesonline"
+version = "1.0.0"
+authors = [
+  { name="Juan Urrego", email="as.santamaria@uniandes.edu.co" },
+]
+description = "Proyecto de rutas de AlpesOnline"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+pythonpath = [
+  ".", "src",
+]
