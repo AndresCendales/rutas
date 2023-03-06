@@ -25,7 +25,7 @@ def suscribirse_a_eventos(app=None):
             datos = mensaje.value().data
             print(f'Evento recibido: {datos}')
 
-            ejecutar_proyeccion(ProyeccionRutasLista(datos.id_reserva, datos.id_cliente, datos.estado, datos.fecha_creacion, datos.fecha_creacion), app=app)
+            ejecutar_proyeccion(ProyeccionRutasLista(datos.id_ruta), app=app)
             
             consumidor.acknowledge(mensaje)     
 

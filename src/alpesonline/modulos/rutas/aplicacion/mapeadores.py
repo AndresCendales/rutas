@@ -8,7 +8,7 @@ from datetime import datetime
 
 class MapeadorRutaDTOJson(AppMap):
     def _procesar_orden(self, orden: dict) -> OrdenDTO:                
-        return OrdenDTO(orden.get('tipo'), orden.get('origen'), orden.get('destino')) 
+        return OrdenDTO(orden.get('id'), orden.get('tipo'), orden.get('origen'), orden.get('destino')) 
     
     def externo_a_dto(self, externo: dict) -> RutaDTO:
         ruta_dto = RutaDTO()
@@ -28,7 +28,10 @@ class MapeadorRuta(RepMap):
 
     def obtener_tipo(self) -> type:
         return Ruta.__class__
-        
+    
+    def entidad_a_dto(self, entidad: Ruta) -> RutaDTO:
+        return RutaDTO("","","",[])
+
     def dto_a_entidad(self, dto: RutaDTO) -> Ruta:
         ruta = Ruta()
         ruta.ordenes = list()

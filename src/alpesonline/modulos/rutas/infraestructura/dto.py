@@ -18,7 +18,7 @@ rutas_ordenes = db.Table(
     "rutas_ordenes",
     db.Model.metadata,
     db.Column("ruta_id", db.String(40), db.ForeignKey("rutas.id")),
-    db.Column("orden_id", db.String(40), db.ForeignKey("ordenes.id")),
+    db.Column("orden_id", db.String(40)),
     db.Column("tipo_orden", db.String(20)),
     db.Column("origen_latitud", db.String(10)),
     db.Column("origen_longitud", db.String(10)),

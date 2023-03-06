@@ -17,12 +17,8 @@ class ProyeccionRuta(Proyeccion, ABC):
         ...
 
 class ProyeccionRutasLista(ProyeccionRuta):
-    def __init__(self, id_ruta, id_cliente, estado, fecha_creacion, fecha_actualizacion):
-        self.id_reserva = id
-        self.id_cliente = id_cliente
-        self.estado = estado
-        self.fecha_creacion = millis_a_datetime(fecha_creacion)
-        self.fecha_actualizacion = millis_a_datetime(fecha_actualizacion)
+    def __init__(self, id_ruta):
+        self.id_ruta = id_ruta
     
     def ejecutar(self, db=None):
         if not db:
@@ -33,12 +29,7 @@ class ProyeccionRutasLista(ProyeccionRuta):
         repositorio = fabrica_repositorio.crear_objeto(RepositorioRutas)
         
         repositorio.agregar(
-            Ruta(
-                id=str(self.id_reserva), 
-                id_cliente=str(self.id_cliente), 
-                estado=str(self.estado), 
-                fecha_creacion=self.fecha_creacion, 
-                fecha_actualizacion=self.fecha_actualizacion))
+            Ruta(id=str(self.id_ruta)))
         
         db.session.commit()
 

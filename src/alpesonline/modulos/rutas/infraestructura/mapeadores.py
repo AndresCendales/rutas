@@ -41,9 +41,7 @@ class MapadeadorEventosRuta(Mapeador):
             from .schema.v1.eventos import RutaProgramadaPayload, EventoRutaProgramada
 
             payload = RutaProgramadaPayload(
-                id_reserva=str(evento.id_reserva), 
-                id_cliente=str(evento.id_cliente), 
-                estado=str(evento.estado), 
+                id_ruta=str(evento.id_ruta),
                 fecha_creacion=int(unix_time_millis(evento.fecha_creacion))
             )
             evento_integracion = EventoRutaProgramada(id=str(evento.id))
