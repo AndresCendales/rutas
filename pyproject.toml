@@ -2,7 +2,7 @@
 name = "alpesonline"
 version = "1.0.0"
 authors = [
-  { name="Juan Urrego", email="as.santamaria@uniandes.edu.co" },
+  { name="Anderson Santamaria", email="as.santamaria@uniandes.edu.co" },
 ]
 description = "Proyecto de rutas de AlpesOnline"
 readme = "README.md"
