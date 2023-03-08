@@ -26,17 +26,6 @@ Siempre puede ejecutarlo en modo DEBUG:
 flask --app src/alpesonline/api --debug run
 ```
 
-### Ejecutar pruebas
-
-```bash
-coverage run -m pytest
-```
-
-### Ver reporte de covertura
-```bash
-coverage report
-```
-
 ### Crear imagen Docker
 
 Desde el directorio principal ejecute el siguiente comando.
